@@ -7,6 +7,11 @@
         <language>ja</language>
         <lastBuildDate>Tue, 24 Oct 2023 09:09:30 -0000</lastBuildDate>
         <item>
+            <title>Java 5.4.1</title>
+            <link>https://docs.contrastsecurity.jp/ja/java-agent-release-notes-and-archive.html#java-5-4-0</link>
+            <description>およよ</description>
+        </item>
+        <item>
             <title>Java 5.4.0</title>
             <link>https://docs.contrastsecurity.jp/ja/java-agent-release-notes-and-archive.html#java-5-4-0</link>
             <description>リリース日： 2023年10月3日現在サポートしている言語バージョン：Java 8、9、10、11、12、13、14、15、16、17、18、19、20新機能と改善点：従来のサンプリング設定である、contrast.samplingはサポートされなくなりました。(JAVA-7225)代わりに、以下のサンプリング設定を使用してください。assess.sampling.enableassess.sampling.baselineassess.sampling.request_frequencyassess.sampling.window_mscontrast.sampling.response_frequencyの設定は非推奨となり、将来的に削除される予定となりました。(JAVA-7284)拡張機能の可観測性プレビューがオンになっている場合に、ルートカバレッジがサポートされるようにエージェントを更新しました。(JAVA-6298)修正された不具合：getClass() nameメソッドの使用時に発生していたProtectのELインジェクションの過検知を修正しました。(JAVA-6621)HTTPメソッドの改ざんルールを更新して、追加の修正方法に対応するようにしました。(JAVA-7264)</description>
