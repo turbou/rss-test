@@ -1,7 +1,7 @@
 version: '3'
 services:
   python3:
-    image: contrastsecurity/rssgen_python3:1.0.0
+    image: ghcr.io/turbou/contrastsecurity/rssgen_python3:1.0.0
     build: .
     container_name: 'rssgen.python3'
     tty: true
