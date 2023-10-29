@@ -39,5 +39,31 @@ jobs:
       # Runs a single command using the runners shell
       - name: Check Python Version
       #  #run: docker-compose exec -T rssgen.python3 python -V
-        run: docker-compose run python3 python -V
+        run: docker-compose run python3 python java_rlsnote.py
+      - uses: actions/upload-artifact@v3
+        with:
+          name: my_site
+          path: feeds
+      - uses: actions/upload-pages-artifact@v1
+        with:
+          path: feeds
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest 
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - uses: actions/deploy-pages@v1
+        id: deployment
+      #- name: Upload artifact
+      #  uses: actions/upload-pages-artifact@v1
+      #  with:
+      #      path: docs
+      #- name: Deploy to GitHub Pages
+      #  id: deployment
+      #  uses: actions/deploy-pages@v1
 

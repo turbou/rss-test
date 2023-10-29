@@ -2,9 +2,11 @@ version: '3'
 services:
   python3:
     image: ghcr.io/turbou/contrastsecurity/rssgen_python3:1.0.0
+    platform: linux/amd64
     build: .
     container_name: 'rssgen.python3'
     tty: true
     volumes:
       - ./work:/work
+      - ./feeds:/feeds
 
