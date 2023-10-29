@@ -33,6 +33,8 @@ jobs:
           docker images
           pwd
           ls -l
+          cat docker-compose.yml
+          docker-compose up -d
       # Runs a single command using the runners shell
       #- name: Check Python Version
       #  run: docker-compose exec -T rssgen.python3 python -V
