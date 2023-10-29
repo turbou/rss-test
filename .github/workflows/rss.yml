@@ -28,8 +28,10 @@ jobs:
       - name: Set up Docker
         run: |
           docker pull ghcr.io/turbou/contrastsecurity/rssgen_python3:1.0.0
-          docker-compose up -d
+      - name: Check Docker Image
+        run: |
+          docker images
       # Runs a single command using the runners shell
-      - name: Check Python Version
-        run: docker-compose exec -T rssgen.python3 python -V
+      #- name: Check Python Version
+      #  run: docker-compose exec -T rssgen.python3 python -V
 
