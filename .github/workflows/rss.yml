@@ -34,8 +34,7 @@ jobs:
           #pwd
           #ls -l
           #cat docker-compose.yml
-          docker-compose create
-          docker-compose start
+          docker-compose up -d
           #docker ps
       # Runs a single command using the runners shell
       - name: Check Python Version
