@@ -31,6 +31,8 @@ jobs:
       - name: Check Docker Image
         run: |
           docker images
+          pwd
+          ls -l
       # Runs a single command using the runners shell
       #- name: Check Python Version
       #  run: docker-compose exec -T rssgen.python3 python -V
