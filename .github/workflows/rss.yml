@@ -30,13 +30,15 @@ jobs:
           docker pull ghcr.io/turbou/contrastsecurity/rssgen_python3:1.0.0
       - name: Check Docker Image
         run: |
-          docker images
-          pwd
-          ls -l
-          cat docker-compose.yml
-          docker-compose up -d
-          docker ps
+          #docker images
+          #pwd
+          #ls -l
+          #cat docker-compose.yml
+          docker-compose create
+          docker-compose start
+          #docker ps
       # Runs a single command using the runners shell
       - name: Check Python Version
-        run: docker-compose exec -T rssgen.python3 python -V
+        #run: docker-compose exec -T rssgen.python3 python -V
+        run: docker exec -it rssgen.python3 python -V
 
