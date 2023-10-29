@@ -35,7 +35,8 @@ jobs:
           ls -l
           cat docker-compose.yml
           docker-compose up -d
+          docker ps
       # Runs a single command using the runners shell
       - name: Check Python Version
-        run: docker exec -it rssgen.python3 python -V
+        run: docker-compose exec -T rssgen.python3 python -V
 
