@@ -1,4 +1,5 @@
 version: '3'
+
 services:
   python3:
     image: ghcr.io/turbou/contrastsecurity/rssgen_python3:1.0.0
