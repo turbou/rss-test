@@ -10,7 +10,13 @@ def main():
     elems = soup.select('section.section.accordion')
     modified_date = soup.select_one('span.formatted-date').text.strip()
 
-    feed = feedgenerator.Rss201rev2Feed(title='Java Agent Release Note', link='https://contrastsecurity.dev/contrast-documentation-rss/java_rlsnote.xml', description='Java Agent Release Note', language='ja')
+    feed = feedgenerator.Rss201rev2Feed(
+        title='Java Agent Release Note',
+        link='https://contrastsecurity.dev/contrast-documentation-rss/java_rlsnote.xml',
+        description='Java Agent Release Note',
+        language='ja',
+        lastBuildDate='Tue, 7 Nov 2023 15:20:00 GMT'
+    )
 
     for elem in elems:
         try:
