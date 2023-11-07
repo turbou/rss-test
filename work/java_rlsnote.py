@@ -15,7 +15,7 @@ def main():
         link='https://contrastsecurity.dev/contrast-documentation-rss/java_rlsnote.xml',
         description='Java Agent Release Note',
         language='ja',
-        lastBuildDate='Tue, 7 Nov 2023 15:20:00 GMT'
+        pubdate='Tue, 7 Nov 2023 15:20:00 GMT'
     )
 
     for elem in elems:
