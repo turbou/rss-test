@@ -20,17 +20,17 @@ def main():
         feed_url='https://contrastsecurity.dev/contrast-documentation-rss/java_rlsnote.xml',
         feed_copyright='Copyright 2023 Contrast Security Japan G.K.'
     )
-    #for elem in elems:
-    #    try:
-    #        id_str = elem.get("id")
-    #        title = elem.select('h3.title')[0].text.strip()
-    #        if not title.lower().startswith('java'):
-    #            continue
-    #        desc = elem.select('div.panel-body')[0].text
-    #        url = 'https://docs.contrastsecurity.jp/ja/java-agent-release-notes-and-archive.html#%s' % id_str
-    #        feed.add_item(title=title, link=url, description=desc)
-    #    except IndexError:
-    #        continue
+    for elem in elems:
+        try:
+            id_str = elem.get("id")
+            title = elem.select('h3.title')[0].text.strip()
+            if not title.lower().startswith('java'):
+                continue
+            desc = elem.select('div.panel-body')[0].text
+            url = 'https://docs.contrastsecurity.jp/ja/java-agent-release-notes-and-archive.html#%s' % id_str
+            feed.add_item(title=title, link=url, description=desc)
+        except IndexError:
+            continue
 
     str_val = feed.writeString('utf-8')
     dom = xml.dom.minidom.parseString(str_val)
