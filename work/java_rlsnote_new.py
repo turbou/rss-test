@@ -35,7 +35,8 @@ def main():
                 continue
             desc = elem.select('div.panel-body')[0].text
             url = 'https://docs.contrastsecurity.jp/ja/java-agent-release-notes-and-archive.html#%s' % id_str
-            feed.add_item(title=title, link=url, description=desc, pubdate=pubdate)
+            #feed.add_item(title=title, link=url, description=desc, pubdate=pubdate)
+            feed.add_item(title=title, link=url, description=desc)
         except IndexError:
             continue
 
