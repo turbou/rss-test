@@ -12,10 +12,9 @@ def main():
 
     feed = feedgenerator.Rss201rev2Feed(
         title='Java Agent Release Note',
-        link='https://contrastsecurity.dev/contrast-documentation-rss/java_rlsnote.xml',
+        link='https://contrastsecurity.dev/contrast-documentation-rss',
         description='Java Agent Release Note',
-        language='ja',
-        pubdate='Tue, 7 Nov 2023 15:20:00 GMT'
+        language='ja'
     )
 
     for elem in elems:
