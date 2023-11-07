@@ -9,9 +9,8 @@ def main():
     soup = BeautifulSoup(res, 'lxml')
     elems = soup.select('section.section.accordion')
     modified_date = soup.select_one('span.formatted-date').text.strip()
-    print(modified_date)
 
-    feed = feedgenerator.Rss201rev2Feed(title='Java Agent Version', link='URL', description='ReleaseNote', language='ja')
+    feed = feedgenerator.Rss201rev2Feed(title='Java Agent Release Note', link='https://contrastsecurity.dev/contrast-documentation-rss/java_rlsnote.xml', description='Java Agent Release Note', language='ja')
 
     for elem in elems:
         try:
