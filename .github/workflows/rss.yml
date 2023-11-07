@@ -23,7 +23,7 @@ jobs:
         run: |
           docker pull ghcr.io/contrast-security-oss/contrast-documentation-rss/python3:1.0.1
       - name: Generate RSS by Python
-        run: docker-compose run python3 python java_rlsnote.py
+        run: docker-compose run python3 python java_rlsnote_new.py
       - uses: actions/upload-artifact@v3
         with:
           name: rss_feeds
