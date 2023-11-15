@@ -37,10 +37,8 @@ def main():
             desc_buffer = []
             #for elem2 in elem.select('p, div'):
             for elem2 in elem.select('p'):
-                if elem2.name == 'div':
-                    for elem3 in elem2.select('li'):
-                        #desc_buffer.append('・%s' % elem3.text)
-                        pass
+                if elem2.parent.name == 'li':
+                    desc_buffer.append('・%s' % elem2.text)
                 else:
                     desc_buffer.append('%s' % elem2.text)
                 #print(elem2.text)
