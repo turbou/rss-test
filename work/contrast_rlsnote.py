@@ -55,7 +55,7 @@ def main():
             continue
     str_val = feed.writeString('utf-8')
     dom = xml.dom.minidom.parseString(str_val)
-    with open('/feeds/contrsat_rlsnote.xml','w') as fp:
+    with open('/feeds/contrast_rlsnote.xml','w') as fp:
         dom.writexml(fp, encoding='utf-8', newl='\n', indent='', addindent='    ')
 
 if __name__ == "__main__":
