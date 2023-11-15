@@ -1,0 +1,99 @@
+テクノロジ
+サポート対象バージョン
+備考
+Javaランタイム
+IBM 8
+Oracle 8　*バージョン11以降はOpenJDKのサポートに従う
+OpenJDK 8、11、12、13、14、15、16、17 、18、19 、20 、21 、22
+OpenJDKのサポートは、ここに示す現在のサポート対象バージョンの範囲内で、全ての公開中のビルドで動作するように設計されています。一般的によく利用されるAzulやAmazon Correttoなどもサポート対象のJDKのカテゴリに入ります。
+サポート対象外：
+JDKプレビュー機能
+旧JavaエージェントのJavaランタイム
+Javaエージェント3.xのみでの使用
+IBM 6、7
+Oracle 6、7
+OpenJDK 6、7
+参考
+サポート速報：Java6およびJava7のサポート終了について
+FAQ：Java6およびJava7のサポート終了について
+アプリケーションサーバ
+GlassFish 4
+Grizzly 2.3.20以降
+JBoss EAP 6.xおよび7.x
+Jetty 7、8、9、10、11
+Karaf 3.0.x
+Netty 4.x
+Play 2.4
+Resin 4
+Tomcat 5、6、7、8、9 、10
+Vert.x 3.1.0 、4.x
+WebLogic 10、11g、12c
+WebSphere* 8.5、9.0
+WebSphere Liberty 22
+WildFly 10、11、14、18、23-27
+* zSeriesおよびAIXの環境ではサポートが限定されます。SPARC SolarisでWebSphereを使用する場合、バージョン8.5.5.11が必須となります。
+ルートカバレッジのサポート：
+GlassFish 4
+Jetty 11.0、10.0、9.4、8.1、7.6
+Resin 4.0
+Tomcat 5、6、7、8、9
+WebLogic 12
+WebSphere 8.5、9.0
+WildFly 10、11、14、18、23-27
+オプティマイザ
+Proguard
+ProguardにあるJavaバイトコードの最適化機能は、Contrastのようなランタイムエージェントが基本前提とする動きに反します。Proguardユーザが、Contrastを利用してアプリケーションを保護する場合は、Proguardの-dontoptimize設定オプションを使用して最適化を行わないようにする必要があります。
+データベース
+DB2
+DynamoDB
+MySQL
+Oracle
+PostgreSQL
+SQL Server
+SQLite JDBCドライバ
+
+メッセージングサービス
+JMS 2.0
+IBM MQ 9.x
+Spring JMS 2.x
+エージェントのバージョン：Java 4.7.0以降
+Contrastのバージョン：3.9.9以降
+Kafkaメッセージキュー・ストリーミング
+エージェントのバージョン： Java 5.0.0以降
+その他のJavaテクノロジ
+ADF JSF
+Apache POI、Fileupload、HttpComponents
+Axis (RPC)、XMLRPC、RMI、Apache CXF、JMS (javax.jms)
+Direct Web Remoting (DWR)
+DropWizard
+Freemarker
+Glowroot*
+GSON、Kryo、minidev、org.json
+Google Web Toolkit (GWT)
+Hibernate
+http4k(4.6.0.0と4.17、Contrast Assess対象)
+J2SE
+JDBC、JDBI、MongoDB
+JSF (MyFaces、RichFaces、Sun)
+java.nio、java.beans
+Java EE/J2EE、Servlet/JSP
+Jersey
+MyBatis
+OWASP ESAPI、AntiSamy、Coverity
+Quarkus RESTEasy
+Seam
+Spring、Spring Boot、Spring AOP
+Spring WebFlux 5および6
+Struts、Struts 2
+Wicket
+XStream、Jackson (JSON/XML)
+Xerces、JAXB、nu.xom
+* Glowrootを使用する場合、glowroot.jarよりも前に、Contrastエージェントのjarを指定して、ロードする必要があります。
+ルートカバレッジのサポート：
+http4k-core 4.17
+http4k-core 4.6
+Jersey  2.25、2.28、2.36、2.6
+Quarkus RESTeasy 2.15
+Spring Web MVC 4.2、5.3、6.0
+Spring WebFlux 5および6
+Struts 2
