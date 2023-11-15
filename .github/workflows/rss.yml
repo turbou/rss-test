@@ -26,6 +26,7 @@ jobs:
         run: |
             docker-compose run python3 python java_rlsnote.py
             docker-compose run python3 python contrast_rlsnote.py
+            docker-compose run python3 python java_support_tech.py
       - uses: actions/upload-artifact@v3
         with:
           name: rss_feeds
