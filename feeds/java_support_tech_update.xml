@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Java Agent Release Note</title>
+        <title>Java Supported Technologies</title>
         <link>https://contrastsecurity.dev/contrast-documentation-rss</link>
         <description>Java Supported Technologies</description>
         <atom:link href="https://contrastsecurity.dev/contrast-documentation-rss/java_support_tech_update.xml" rel="self"/>
@@ -9,7 +9,7 @@
         <copyright>Copyright 2023 Contrast Security Japan G.K.</copyright>
         <lastBuildDate>Thu, 16 Nov 2023 00:00:00 -0000</lastBuildDate>
         <item>
-            <title>Java Supported Technologies</title>
+            <title>Initial Item</title>
             <link>https://docs.contrastsecurity.jp/ja/java-supported-technologies.html</link>
             <description>内容に変更があった場合はお知らせします。</description>
             <pubDate>Thu, 16 Nov 2023 00:00:00 -0000</pubDate>
