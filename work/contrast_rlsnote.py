@@ -51,7 +51,7 @@ def main():
             #    continue
             url = 'https://docs.contrastsecurity.jp/ja/release.html#%s' % id_str
             #feed.add_item(title=title, link=url, description=''.join(['<p>{0}</p>'.format(s) for s in desc_buffer]), pubdate=pubdate)
-            feed.add_item(title=title, link=url, description='\n'.join(desc_buffer), pubdate=pubdate)
+            feed.add_item(title=title, link=url, description='<br />'.join(desc_buffer), pubdate=pubdate)
         except IndexError:
             continue
     str_val = feed.writeString('utf-8')
