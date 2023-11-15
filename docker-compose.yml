@@ -9,5 +9,6 @@ services:
     tty: true
     volumes:
       - ./work:/work
+      - ./files:/files
       - ./feeds:/feeds
 
