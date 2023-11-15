@@ -33,9 +33,17 @@ def main():
             title = elem.select('h3.title')[0].text.strip()
             if not title.lower().startswith('java'):
                 continue
-            desc = elem.select('div.panel-body')[0].text
+            #desc = elem.select('div.panel-body')[0].text
+            desc_buffer = []
+            for elem2 in elem.select('p, div'):
+                if elem2.name == 'div':
+                    for elem3 in elem2.select('li'):
+                        desc_buffer.append('・%s' % elem3.text)
+                else:
+                    desc_buffer.append('%s' % elem2.text)
+                #print(elem2.text)
             url = 'https://docs.contrastsecurity.jp/ja/java-agent-release-notes-and-archive.html#%s' % id_str
-            feed.add_item(title=title, link=url, description=desc, pubdate=pubdate)
+            feed.add_item(title=title, link=url, description=''.join(['<p>{0}</p>'.format(s) for s in desc_buffer]), pubdate=pubdate)
         except IndexError:
             continue
 
