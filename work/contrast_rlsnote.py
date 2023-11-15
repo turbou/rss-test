@@ -42,18 +42,15 @@ def main():
             for elem2 in elem.select('section.section'):
                 id_str2 = elem2.get("id").strip()
                 #print('- ', elem2.select_one('div.titlepage').text)
-                desc_buffer.append('<b>%s</b><br />' % elem2.select_one('div.titlepage').text)
-                desc_buffer.append('<ul>')
+                desc_buffer.append('<b>%s</b>' % elem2.select_one('div.titlepage').text)
                 for elem3 in elem2.select('li.listitem'):
                     #print('  - ', elem3.select_one('p').text)
-                    desc_buffer.append('<li>%s</li>' % elem3.select_one('p').text)
-                desc_buffer.append('</ul>')
+                    desc_buffer.append('・%s' % elem3.select_one('p').text)
             #print(id_str, elem.get('data-legacy-id'))
             #if not title.lower().startswith('java'):
             #    continue
             url = 'https://docs.contrastsecurity.jp/ja/release.html#%s' % id_str
-            #feed.add_item(title=title, link=url, description=''.join(['<p>{0}</p>'.format(s) for s in desc_buffer]), pubdate=pubdate)
-            feed.add_item(title=title, link=url, description=''.join(desc_buffer), pubdate=pubdate)
+            feed.add_item(title=title, link=url, description=''.join(['<p>{0}</p>'.format(s) for s in desc_buffer]), pubdate=pubdate)
         except IndexError:
             continue
     str_val = feed.writeString('utf-8')
