@@ -53,6 +53,7 @@ def main():
             res = difflib.unified_diff(after_text, before_text)
             res_str = '\n'.join(res)
             if (len(res_str.strip()) > 0):
+                print('Found diff: ', title)
                 item_dict[title] = (url, res_str)
                 shutil.move('/files/%s.tmp' % title, '/files/%s.txt' % title)
         except IndexError:
@@ -63,7 +64,7 @@ def main():
     for k, v in item_dict.items():
         feed.add_item(title=k, link=v[0], description=''.join(['<p>{0}</p>'.format(s) for s in v[1].splitlines()]), pubdate=pubdate)
 
-    if len(item_dict):
+    if len(item_dict) > 0:
         str_val = feed.writeString('utf-8')
         dom = xml.dom.minidom.parseString(str_val)
         with open('/feeds/java_support_tech_update.xml','w') as fp: 
