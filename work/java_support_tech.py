@@ -50,7 +50,7 @@ def main():
             after_text = None
             with open('/files/%s.tmp' % title,'r') as fp:
                 after_text = fp.readlines()
-            res = difflib.unified_diff(after_text, before_text)
+            res = difflib.unified_diff(before_text, after_text)
             res_str = '\n'.join(res)
             if (len(res_str.strip()) > 0):
                 print('Found diff: ', title)
