@@ -30,11 +30,11 @@ jobs:
       - name: Commit updated files
         run: |
             git config core.filemode false
-            if ! git diff --exit-code --quiet
+            if ! git diff --exit-code --quiet ./files
             then
               git config user.name Taka Shiozaki
               git config user.email taka.shiozaki@contrastsecurity.com
-              git commit -m "Commit updated files"
+              git commit -m "Commit updated files" ./files
               git push
             fi
       - uses: actions/upload-artifact@v3
