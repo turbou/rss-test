@@ -6,6 +6,7 @@ from datetime import datetime
 import locale
 import re
 import difflib
+import shutil
 
 def main():
     url = 'https://docs.contrastsecurity.jp/ja/java-supported-technologies.html'
@@ -38,12 +39,9 @@ def main():
             id_str = elem.get("id")
             url = 'https://docs.contrastsecurity.jp/ja/java-supported-technologies.html#%s' % id_str
             title = elem.select_one('h2.title').text
-            print(title)
-            #print('----------------------------------------------------------')
             text_buffer = []
             for elem2 in elem.select('p'):
                 text_buffer.append(elem2.text)
-            #print('----------------------------------------------------------')
             with open('/files/%s.tmp' % title,'w') as fp:
                 fp.write('\n'.join(text_buffer))
             before_text = None
@@ -56,6 +54,7 @@ def main():
             res_str = '\n'.join(res)
             if (len(res_str.strip()) > 0):
                 item_dict[title] = (url, res_str)
+                shutil.move('/files/%s.tmp' % title, '/files/%s.txt' % title)
         except IndexError:
             continue
 

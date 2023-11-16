@@ -27,6 +27,16 @@ jobs:
             docker-compose run python3 python java_rlsnote.py
             docker-compose run python3 python contrast_rlsnote.py
             docker-compose run python3 python java_support_tech.py
+      - name: Commit updated files
+        run: |
+            git config core.filemode false
+            if ! git diff ./files --exit-code --quiet
+            then
+              git config user.name Taka Shiozaki
+              git config user.email taka.shiozaki@contrastsecurity.com
+              git commit -m "Commit updated files"
+              git push
+            fi
       - uses: actions/upload-artifact@v3
         with:
           name: rss_feeds
