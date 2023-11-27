@@ -25,6 +25,13 @@ jobs:
       - name: Generate RSS by Python
         run: |
             docker-compose run python3 python java_rlsnote.py
+            docker-compose run python3 python dotnet_framework_rlsnote.py
+            docker-compose run python3 python dotnet_core_rlsnote.py
+            docker-compose run python3 python nodejs_rlsnote.py
+            docker-compose run python3 python go_rlsnote.py
+            docker-compose run python3 python python_rlsnote.py
+            docker-compose run python3 python ruby_rlsnote.py
+            docker-compose run python3 python php_rlsnote.py
             docker-compose run python3 python contrast_rlsnote.py
             docker-compose run python3 python java_support_tech.py
       - name: Commit updated files
