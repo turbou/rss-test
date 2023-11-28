@@ -8,6 +8,7 @@ import re
 import difflib
 import shutil
 import html
+import hashlib
 
 def main():
     url = 'https://docs.contrastsecurity.jp/ja/java-supported-technologies.html'
@@ -37,7 +38,9 @@ def main():
                     pubdate = datetime.strptime(pubdate_str, '%B %d, %Y')
                 continue
             id_str = elem.get("id")
+            id_hash = hashlib.md5(id_str.encode()).hexdigest()
             url = 'https://docs.contrastsecurity.jp/ja/java-supported-technologies.html#%s' % id_str
+            guid = 'https://docs.contrastsecurity.jp/ja/java-supported-technologies.html#%s' % id_hash
             title = elem.select_one('h2.title').text
             text_buffer = []
             for elem2 in elem.select('p'):
@@ -54,7 +57,7 @@ def main():
             res_str = '\n'.join(res)
             if (len(res_str.strip()) > 0):
                 print('Found diff: ', title)
-                item_dict[title] = (url, res_str)
+                item_dict[title] = (url, res_str, guid)
                 shutil.move('/files/%s.tmp' % title, '/files/%s.txt' % title)
         except IndexError:
             continue
@@ -62,7 +65,7 @@ def main():
     if pubdate is None:
         pubdate = datetime.date.today()
     for k, v in item_dict.items():
-        feed.add_item(title=k, link=v[0], description=html.escape(''.join(['<p>{0}</p>'.format(s) for s in v[1].splitlines()])), pubdate=pubdate)
+        feed.add_item(title=k, link=v[0], description=''.join(['<p>{0}</p>'.format(s) for s in v[1].splitlines()]), pubdate=pubdate, unique_id=v[2])
 
     if len(item_dict) > 0:
         str_val = feed.writeString('utf-8')
