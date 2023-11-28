@@ -8,11 +8,5 @@
         <language>ja</language>
         <copyright>Copyright 2023 Contrast Security Japan G.K.</copyright>
         <lastBuildDate>Thu, 16 Nov 2023 00:00:00 -0000</lastBuildDate>
-        <item>
-            <title>Java(Kotlin、Scala)エージェントのサポート対象テクノロジ</title>
-            <link>https://docs.contrastsecurity.jp/ja/java-supported-technologies.html</link>
-            <description>内容に変更があった場合はお知らせします。</description>
-            <pubDate>Thu, 16 Nov 2023 00:00:00 -0000</pubDate>
-        </item>
     </channel>
 </rss>
