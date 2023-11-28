@@ -6,6 +6,7 @@ from datetime import datetime
 import locale
 import re
 import html
+import hashlib
 
 def main():
     url = 'https://docs.contrastsecurity.jp/ja/release.html'
@@ -50,8 +51,10 @@ def main():
             #print(id_str, elem.get('data-legacy-id'))
             #if not title.lower().startswith('java'):
             #    continue
+            id_hash = hashlib.md5(id_str.encode()).hexdigest()
             url = 'https://docs.contrastsecurity.jp/ja/release.html#%s' % id_str
-            feed.add_item(title=title, link=url, description=html.escape(''.join(['<p>{0}</p>'.format(s) for s in desc_buffer])), pubdate=pubdate)
+            guid = 'https://docs.contrastsecurity.jp/ja/release.html#%s' % id_hash
+            feed.add_item(title=title, link=url, description=''.join(['<p>{0}</p>'.format(s) for s in desc_buffer]), pubdate=pubdate, unique_id=guid)
         except IndexError:
             continue
     str_val = feed.writeString('utf-8')
