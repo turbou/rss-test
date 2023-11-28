@@ -6,6 +6,7 @@ from datetime import datetime
 import locale
 import html
 import hashlib
+import re
 
 def main():
     locale.setlocale(locale.LC_TIME, "C")
@@ -33,7 +34,7 @@ def main():
             if pubdate_str:
                 pubdate = datetime.strptime(pubdate_str, '%B %d, %Y')
             title = elem.select('h3.title')[0].text.strip()
-            if not title.lower().startswith('node'):
+            if not title.lower().startswith('node') or re.search(r'\d$', title) is None: # ベータも無視
                 continue
             #desc = elem.select('div.panel-body')[0].text
             desc_buffer = []
