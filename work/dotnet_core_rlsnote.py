@@ -5,6 +5,7 @@ from django.utils.feedgenerator import Rss201rev2Feed
 from datetime import datetime
 import locale
 import html
+import hashlib
 
 def main():
     locale.setlocale(locale.LC_TIME, "C")
@@ -43,8 +44,10 @@ def main():
                 else:
                     desc_buffer.append('%s' % elem2.text)
                 #print(elem2.text)
+            id_hash = hashlib.md5(id_str.encode()).hexdigest()
             url = 'https://docs.contrastsecurity.jp/ja/-net-core-agent-release-notes-and-archive.html#%s' % id_str
-            feed.add_item(title=title, link=url, description=html.escape(''.join(['<p>{0}</p>'.format(s) for s in desc_buffer])), pubdate=pubdate)
+            guid = 'https://docs.contrastsecurity.jp/ja/-net-core-agent-release-notes-and-archive.html#%s' % id_hash
+            feed.add_item(title=title, link=url, description=''.join(['<p>{0}</p>'.format(html.escape(s)) for s in desc_buffer]), pubdate=pubdate, unique_id=guid)
         except IndexError:
             continue
 
