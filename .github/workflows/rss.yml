@@ -28,6 +28,8 @@ jobs:
             docker-compose run python3 python dotnet_framework_rlsnote.py
             docker-compose run python3 python dotnet_core_rlsnote.py
             docker-compose run python3 python nodejs_rlsnote.py
+            docker-compose run python3 python nodejs_beta_rlsnote.py
+            docker-compose run python3 python nodejs_protect_rlsnote.py
             docker-compose run python3 python go_rlsnote.py
             docker-compose run python3 python python_rlsnote.py
             docker-compose run python3 python ruby_rlsnote.py
