@@ -7,6 +7,7 @@ import locale
 import re
 import difflib
 import shutil
+import html
 
 def main():
     url = 'https://docs.contrastsecurity.jp/ja/java-supported-technologies.html'
@@ -14,7 +15,6 @@ def main():
     soup = BeautifulSoup(res, 'lxml')
     elems = soup.select('section.section')
     modified_date = soup.select_one('span.formatted-date').text.strip()
-    print(modified_date)
 
     feed = Rss201rev2Feed(
         title='Java Supported Technologies',
@@ -62,7 +62,7 @@ def main():
     if pubdate is None:
         pubdate = datetime.date.today()
     for k, v in item_dict.items():
-        feed.add_item(title=k, link=v[0], description=''.join(['<p>{0}</p>'.format(s) for s in v[1].splitlines()]), pubdate=pubdate)
+        feed.add_item(title=k, link=v[0], description=html.escape(''.join(['<p>{0}</p>'.format(s) for s in v[1].splitlines()])), pubdate=pubdate)
 
     if len(item_dict) > 0:
         str_val = feed.writeString('utf-8')

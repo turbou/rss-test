@@ -4,6 +4,7 @@ import xml.dom.minidom
 from django.utils.feedgenerator import Rss201rev2Feed
 from datetime import datetime
 import locale
+import html
 
 def main():
     locale.setlocale(locale.LC_TIME, "C")
@@ -43,7 +44,7 @@ def main():
                     desc_buffer.append('%s' % elem2.text)
                 #print(elem2.text)
             url = 'https://docs.contrastsecurity.jp/ja/python-agent-release-notes-and-archive.html#%s' % id_str
-            feed.add_item(title=title, link=url, description=''.join(['<p>{0}</p>'.format(s) for s in desc_buffer]), pubdate=pubdate)
+            feed.add_item(title=title, link=url, description=html.escape(''.join(['<p>{0}</p>'.format(s) for s in desc_buffer])), pubdate=pubdate)
         except IndexError:
             continue
 
