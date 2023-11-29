@@ -1,0 +1,62 @@
+このエージェントでは、以下のテクノロジをサポートします。
+テクノロジ
+サポート対象バージョン
+備考
+アプリケーションフレームワーク
+ASP.NET Core(3.1.x、5.0.x、6.0.x、7.0.x、8.0.x)
+Model-View-Controller (MVC)
+Razor Pages
+限定サポート：
+ASP .NET Core 3.1.x、5.0.x
+サポート対象外：
+.NET CoreまたはASP.NET Coreバージョン2.1以前
+.NET Framework (Windows)またはMono (Linux/Windows)上で動作するASP.NET Coreアプリケーション
+ランタイム
+.NET Coreランタイム：3.1.x、5.0.x、6.0.x、7.0.x
+、 8.0.x
+.NET Coreターゲットフレームワーク ：
+netcoreapp3.1
+net5.0
+net6.0
+net7.0
+net8.0
+限定サポート：
+.NET Coreランタイム 3.1.x、5.0.x
+サポート対象外：
+ランタイムよりも上位バージョンのASP.NET Coreアプリケーションでの実行(例、ASP.NET Core 5.0を参照する.NET Core 3.1ランタイムのアプリケーションなど)
+参照するASP.NET Coreのバージョンとコンパイル時に選択したターゲットのランタイムが一致しない.NET Coreアプリケーションでの実行
+Windows版.NET Core
+Windowsオペレーティングシステム
+Windows Server (LTSC) (x86, x64)：2012 R2、2016、2019、2022
+Windows Server (SAC) (x64)：1809、1903
+Windowsワークステーション(x86、x64)：7、8/8.1、10
+64ビットシステムでは、エージェントを使用して32ビットと64ビットの両方のWebアプリケーションを解析できます。
+サポート対象外：
+ARM版Windows
+サーバコンテナ
+Kestrel、IISHttpServer
+サポート対象外：
+Http.sys (旧WebListener)
+ホスティングコンテナ
+セルフホスト、IIS、IIS Express
+
+Linux OS版.NET Core
+Linuxオペレーティングシステム
+Ubuntu：18.04以降(x64、ARM64)
+Debian：10以降(x64、ARM64)
+openSUSE：15以降(x64)
+Alpine：3.13以降(x64、ARM64)
+CentOS：7(x64)
+CentOS Stream：8(x64)
+Red Hat Enterprise Linux：7以降(x64)
+サポート対象外： Red Hat Enterprise Linux 6
+サーバコンテナ
+Kestrel
+
+ホスティングコンテナ
+セルフホスト
+
+.NET Core 2.2は、.NET Coreエージェントのバージョン1.5.20以降ではサポートされません。.NET Core 2.2を使用している場合、アプリケーションの.NET Coreランタイムをアップグレードするまでは、.NET Coreエージェントのバージョン1.5.20以前のものを使用してください。
+NET Coreエージェントのバージョン1.9.9をもって、.NET Core 2.1のサポートを終了しました。.NET Core 2.1を使用している場合、アプリケーションの.NET Coreランタイムをアップグレードするまでは、.NET Coreエージェントのバージョン1.9.9以前のものを使用してください。
+Microsoftは、2022年5月10日をもって.NET 5.0のサポートを終了し、2022年12月13日をもって.NET Core 3.1のサポートを終了しました。.NET 5.0および.NET Core 3.1に関するContrastのサポートは、.NET Coreエージェントのバージョン3.0.0による限定的なサポートとなります。Contrastの限定サポートでは、サポート対象の言語バージョンで再現可能な問題のみを解決します。お使いのアプリケーションを.NETのサポート対象バージョンにアップグレードすることを強く推奨します。
+.NET Coreエージェントは、System.RuntimeおよびASPNET Coreを参照していないアプリケーションをサポートしません。また、エージェントが依存しているアセンブリをコンパイラがトリムする可能性があるため、エージェントはトリミングされた自己完結型のデプロイと実行可能ファイルもサポートしません。

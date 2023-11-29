@@ -1,0 +1,36 @@
+Contrast .NETエージェントは、以下のテクノロジで構築されるWebアプリケーションの解析をサポートします。
+テクノロジ
+サポート対象のバージョン
+注記
+Windows版 .NET Framework
+アプリケーションのランタイムバージョン
+4.5以降
+古いバージョンの.NET 4をアプリケーションがターゲットにしている場合でも、.NET Frameworkアプリケーションの互換性により、ほとんどのアプリケーションで最新の.NET Frameworkエージェントを使用できます。
+サポート対象外：
+Classic ASP
+Classic ASPのアプリケーションは.NETランタイムで動作しません。
+Monoランタイム
+Contrastエージェントは、CLRのプロファイルAPIを使用してアプリケーションを計測します。CLRプロファイルAPIは、CLRによって公開されるCOM(Component Object Model)ベースのインターフェイスです。LinuxではCOMをサポートしません。したがって、MonoはCLRプロファイルAPIをサポートしないため、ContrastはMonoをサポートできません。
+サーバのランタイムバージョン
+4.7.1, 4.7.2, 4.8
+
+CLR
+CLR4
+
+Webサーバ
+IIS
+IIS Express
+アプリケーションフレームワーク
+ASP.NET MVC 3-5
+ASP.NET Web Forms
+ASP.NET Web Pages
+IIS-ホストのASMXベースWebサービス
+IISホストのWeb API
+IISホストのWCFサービス
+OWINホストのWeb API(Windowsサービスまたはコマンドラインアプリケーション経由)
+これらのフレームワークは、テスト済みのものを明示的に記載していますが、フレームワークが単に典型的なASP.NETクラス(例えば、System.Web.HttpRequestなど)をラップしている場合は、他のアプリケーションを解析できる場合があります。
+サポート対象外：
+.NET FrameworkのASP.NET Coreアプリケーションの解析(.NET Coreアプリケーションを解析するには.NET Coreエージェント を使用)。
+部分的な信頼(trust)レベルで実行されているアプリケーション。
+Azure App Serviceの場合、.NET Frameworkアプリケーションは.NET Frameworkの拡張機能または NuGetパッケージを使用する必要があります。
+.NET Coreアプリケーションは、.NET Coreの拡張機能またはNuGetパッケージを使用する必要があります。
