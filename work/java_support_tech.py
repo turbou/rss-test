@@ -48,8 +48,12 @@ def main():
             with open('/files/%s.tmp' % title,'w') as fp:
                 fp.write('\n'.join(text_buffer))
             before_text = None
-            with open('/files/%s.txt' % title,'r') as fp:
-                before_text = fp.readlines()
+            try:
+                with open('/files/%s.txt' % title,'r') as fp:
+                    before_text = fp.readlines()
+            except FileNotFoundError:
+                shutil.move('/files/%s.tmp' % title, '/files/%s.txt' % title)
+                continue
             after_text = None
             with open('/files/%s.tmp' % title,'r') as fp:
                 after_text = fp.readlines()
