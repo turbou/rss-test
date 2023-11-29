@@ -36,6 +36,8 @@ jobs:
             docker-compose run python3 python php_rlsnote.py
             docker-compose run python3 python contrast_rlsnote.py
             docker-compose run python3 python java_support_tech.py
+            docker-compose run python3 python dotnet_framework_support_tech.py
+            docker-compose run python3 python dotnet_core_support_tech.py
             docker-compose run python3 python nodejs_support_tech.py
             docker-compose run python3 python go_support_tech.py
             docker-compose run python3 python python_support_tech.py
