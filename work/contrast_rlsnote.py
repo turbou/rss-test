@@ -54,6 +54,8 @@ def main():
             id_hash = hashlib.md5(id_str.encode()).hexdigest()
             url = 'https://docs.contrastsecurity.jp/ja/release.html#%s' % id_str
             guid = 'https://docs.contrastsecurity.jp/ja/release.html#%s' % id_hash
+            if not '月' in title:
+                continue
             feed.add_item(title=title, link=url, description=''.join(['<p>{0}</p>'.format(s) for s in desc_buffer]), pubdate=pubdate, unique_id=guid)
         except IndexError:
             continue
