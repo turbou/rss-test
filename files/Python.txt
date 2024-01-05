@@ -15,14 +15,14 @@ Contrastは、バグフィックスおよび セキュリティステータス�
 
 アプリケーションフレームワーク
 Aiohttp：3.7以降
-Bottle： 0.11、0.12
-Django： 1.11、2.x、3.x、4.x
+Bottle： 0.12以降
+Django： 3.2以降
 Django Rest Framework：3.12以降
 Falcon (ASGI)： 3.0、3.1
-Falcon (WSGI)： 2.x、3.x
-FastAPI: 0.68.x - 0.99.x
-Flask：1.x、2.x
-Pyramid：1.10、2.x
+Falcon (WSGI)： 3.0以降
+FastAPI： 0.71.x以降
+Flask： 1.1以降
+Pyramid： 1.10以降
 Quart：0.15以降
 Pythonエージェントは、WSGI互換を意図して作られています。ガイドラインに従う限り、他のWSGIアプリケーションと互換性がある可能性があります。
 また、PythonエージェントはDjango、FastAPI、QuartなどのASGIインターフェイスを提供するフレームワークとも互換性があります。
@@ -31,9 +31,9 @@ FastAPIおよびStarlette(FastAPIが依存している)は比較的新しいラ�
 エージェントのテストはx86_64で実施
 他のアーキテクチャで機能する可能性もありますが、正式にはサポートされていません。
 Webサーバ
-Gunicorn 0.16.1 - 21.2.X
+Gunicorn 0.16.1 –21.2.x
 uWSGI 2.0.14 - 2.0.x
-Uvicorn 0.14.X - 0.23.X
+Uvicorn 0.14.x - 0.23.x
 データベース
 Mongo (pymongo)
 MySQL (PyMySQL、mysql-connector)
