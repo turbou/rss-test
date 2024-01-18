@@ -27,7 +27,7 @@ Play 2.4
 Resin 4
 Tomcat 5、6、7、8、9 、10
 Vert.x 3.1.0 、4.x
-WebLogic 10、11g、12c
+WebLogic 10、11g、12c、14
 WebSphere* 8.5、9.0
 WebSphere Liberty 22
 WildFly 10、11、14、18、23-27
@@ -37,7 +37,7 @@ GlassFish 4
 Jetty 11.0、10.0、9.4、8.1、7.6
 Resin 4.0
 Tomcat 5、6、7、8、9、10
-WebLogic 12
+WebLogic 12、14
 WebSphere 8.5、9.0
 WildFly 10、11、14、18、23-27
 オプティマイザ
