@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>End of Agent support</title>
+        <link>https://contrastsecurity.dev/contrast-documentation-rss</link>
+        <description>End Of Agent Support</description>
+        <atom:link href="https://contrastsecurity.dev/contrast-documentation-rss/end_of_support.xml" rel="self"/>
+        <language>ja</language>
+        <copyright>Copyright 2024 Contrast Security Japan G.K.</copyright>
+        <lastBuildDate>Mon, 05 Feb 2024 16:03:44 +0000</lastBuildDate>
+    </channel>
+</rss>
