@@ -98,7 +98,7 @@ def main():
         time.sleep(1)
 
     feed = Rss201rev2Feed(
-        title='End of agent support',
+        title='End of Agent support',
         link='https://contrastsecurity.dev/contrast-documentation-rss',
         description='End Of Agent Support',
         language='ja',
