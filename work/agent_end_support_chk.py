@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import xml.dom.minidom
 from django.utils.feedgenerator import Rss201rev2Feed
 from datetime import datetime as dt
+from dateutil.relativedelta import relativedelta
 import datetime
 import locale
 import html
@@ -107,17 +108,17 @@ def main():
     )
 
     today = dt.today().replace(hour=0, minute=0, second=0, microsecond=0)
-    #print(today)
     item_dict = {}
     for title, data_tuple in versions_dict.items():
         rls_date = dt.strptime(data_tuple[0], '%Y%m%d%H%M%S')
-        date_335 = rls_date + datetime.timedelta(days=335)
-        date_365 = rls_date + datetime.timedelta(days=355)
-        #print(title, rls_date, date_335, date_365)
-        if today == date_335:
-            item_dict[title] = (data_tuple[1], 'サポート期間終了の30日前です。', data_tuple[2])
-        if today == date_365:
-            item_dict[title] = (data_tuple[1], 'サポート期間が終了しました。', data_tuple[2])
+        date_end_of_support = rls_date + relativedelta(years=1)
+        date_end_of_support = date_end_of_support - datetime.timedelta(days=1)
+        date_before_30days = date_end_of_support - datetime.timedelta(days=30)
+        #print(title, rls_date, today, date_end_of_support, date_before_30days)
+        if today == date_before_30days:
+            item_dict[title] = (data_tuple[1], '%s エージェントのサポート終了から30日前です。' % title, data_tuple[2])
+        if today == date_end_of_support:
+            item_dict[title] = (data_tuple[1], '%s エージェントのサポート終了日となります。' % title, data_tuple[2])
 
     for k, v in item_dict.items():
         feed.add_item(title=k, link=v[0], description=''.join(['<p>{0}</p>'.format(s) for s in v[1].splitlines()]), pubdate=pubdate, unique_id=v[2])
