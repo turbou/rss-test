@@ -6,7 +6,7 @@
 1.20
 1.21
 Contrastは、Goリリースのサポートポリシーに従います。このポリシーは、直近にリリースされた2つのメジャーバージョンをサポートします。Go言語のサポート対象バージョンは、新しいメジャーバージョンがリリースされると変わります。アプリケーションの依存関係は、go.modファイルで指定する必要があります。
- This agent is compatible with  Go 1.22.  If you update your applications to Go 1.22, they will continue to work with Contrast. Support for new features introduced in Go 1.22 is planned for a future release.
+エージェントは、Go 1.22と互換性があります。アプリケーションをGo 1.22にアップデートしても、引き続きContrastで動作します。Go 1.22で導入された新機能のサポートは、今後のリリースで予定されています。
 サポート対象外：
 1.19：サポート対象だった最後のバージョンは5.12.0
 1.18：サポート対象だった最後のバージョンは4.2.0
