@@ -108,6 +108,10 @@ def main():
     )
 
     today = dt.today().replace(hour=0, minute=0, second=0, microsecond=0)
+    env_today = os.getenv('TODAY')
+    if env_today:
+        today = dt.strptime(env_today, '%Y-%m-%d').replace(hour=0, minute=0, second=0, microsecond=0)
+        print('using env.TODAY %s' % today)
     item_dict = {}
     for title, data_tuple in versions_dict.items():
         rls_date = dt.strptime(data_tuple[0], '%Y%m%d%H%M%S')

@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "0 0 * * *"
   workflow_dispatch:
+    inputs:
+      today:
+        type: string
+        required: false
+        description: 'date(YYYY-MM-DD) for end of support check'
 
 jobs:
   rssgen:
@@ -46,6 +51,8 @@ jobs:
             docker-compose run python3 python ruby_support_tech.py
             docker-compose run python3 python php_support_tech.py
             docker-compose run python3 python agent_end_support_chk.py
+        env:
+          TODAY: ${{ github.event.inputs.today }}
       - name: Commit updated files
         run: |
             git config core.filemode false
