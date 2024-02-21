@@ -2,7 +2,7 @@ version: '3'
 
 services:
   python3:
-    image: ghcr.io/contrast-security-oss/contrast-documentation-rss/python3:1.0.1
+    image: ghcr.io/turbou/contrast-documentation-rss/python3:1.0.2
     platform: linux/amd64
     build: .
     container_name: 'rssgen.python3'
