@@ -45,6 +45,7 @@ jobs:
             docker-compose run python3 python python_support_tech.py
             docker-compose run python3 python ruby_support_tech.py
             docker-compose run python3 python php_support_tech.py
+            docker-compose run python3 python agent_end_support_chk.py
       - name: Commit updated files
         run: |
             git config core.filemode false
