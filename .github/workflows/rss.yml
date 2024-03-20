@@ -30,7 +30,7 @@ jobs:
           OWNER: ${{ github.repository_owner }}
       - name: Pull Docker Image
         run: |
-          docker pull ghcr.io/turbou/contrast-documentation-rss/python3:1.0.2
+          docker pull ghcr.io/contrast-security-oss/contrast-documentation-rss/python3:latest
       - name: Generate RSS by Python
         run: |
             docker-compose run python3 python java_rlsnote.py
