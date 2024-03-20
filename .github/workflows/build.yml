@@ -2,6 +2,10 @@ name: Create and publish a Docker image
 
 on:
   workflow_dispatch:
+    inputs:
+      version:
+        type: string
+        required: true
 
 env:
   REGISTRY: ghcr.io
@@ -32,6 +36,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: user/app:latest
 
