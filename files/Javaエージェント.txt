@@ -70,6 +70,7 @@ Freemarker
 Glowroot*
 GSON、Kryo、minidev、org.json
 Google Web Toolkit (GWT)
+ gRPC 1.4.x, 1.5.x, 1.6.x
 Hibernate
 http4k(4.6.0.0と4.17、Contrast Assess対象)
 J2SE

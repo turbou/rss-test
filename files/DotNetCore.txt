@@ -6,14 +6,14 @@
 ASP.NET Core(3.1.x、5.0.x、6.0.x、7.0.x、8.0.x)
 Model-View-Controller (MVC)
 Razor Pages
- Grpc.AspNetCore
+Grpc.AspNetCore
 限定サポート：
 ASP .NET Core 3.1.x、5.0.x
 サポート対象外：
 .NET CoreまたはASP.NET Coreバージョン2.1以前
 .NET Framework (Windows)またはMono (Linux/Windows)上で動作するASP.NET Coreアプリケーション
- Grpc.Core
- The future of gRPC in C# belongs to grpc-dotnet contains additional details.
+Grpc.Core
+gRPCドキュメントのThe future of gRPC in C# belongs to grpc-dotnet(C#でのgRPCにgrpc-dotnetを推奨)に、詳細情報があります。
 ランタイム
 .NET Coreランタイム：3.1.x、5.0.x、6.0.x、7.0.x
 、 8.0.x
