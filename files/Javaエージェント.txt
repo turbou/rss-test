@@ -4,7 +4,7 @@
 Javaランタイム
 IBM 8
 Oracle 8　*バージョン11以降はOpenJDKのサポートに従う
-OpenJDK 8、11、12、13、14、15、16、17 、18、19 、20 、21
+OpenJDK 8、11、12、13、14、15、16、17、18、19、20、21
 OpenJDKのサポートは、ここに示す現在のサポート対象バージョンの範囲内で、全ての公開中のビルドで動作するように設計されています。一般的によく利用されるAzulやAmazon Correttoなどもサポート対象のJDKのカテゴリに入ります。
 サポート対象外：
 JDKプレビュー機能
@@ -17,7 +17,7 @@ OpenJDK 6、7
 サポート速報：Java6およびJava7のサポート終了について
 FAQ：Java6およびJava7のサポート終了について
 アプリケーションサーバ
-GlassFish 4
+GlassFish 4、5、6
 Grizzly 2.3.20以降
 JBoss EAP 6.xおよび7.x
 Jetty 7、8、9、10、11
@@ -33,7 +33,7 @@ WebSphere Liberty 22
 WildFly 10、11、14、18、23-27
 * zSeriesおよびAIXの環境ではサポートが限定されます。SPARC SolarisでWebSphereを使用する場合、バージョン8.5.5.11が必須となります。
 ルートカバレッジのサポート：
-GlassFish 4
+GlassFish 4、5、6
 Jetty 11.0、10.0、9.4、8.1、7.6
 Resin 4.0
 Tomcat 5、6、7、8、9、10
@@ -70,7 +70,7 @@ Freemarker
 Glowroot*
 GSON、Kryo、minidev、org.json
 Google Web Toolkit (GWT)
- gRPC 1.4.x, 1.5.x, 1.6.x
+gRPC 1.4.x、1.5.x、1.6.x
 Hibernate
 http4k(4.6.0.0と4.17、Contrast Assess対象)
 J2SE
