@@ -25,6 +25,7 @@ NPMバージョン
 Express 4
 Fastify 3、4
 Koa 2.3以降
+ Hapi 19, 20, 21
 
 データベースドライバとオブジェクト関係マッピング(ORM)
 MarsDB 現在はメンテナンスされていないが、脆弱なJuiceShopアプリケーションには必要。
