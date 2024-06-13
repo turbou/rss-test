@@ -16,3 +16,5 @@ Apache
 パッケージ管理
 Composer
 SCAでサポートされています。
+コンテンツ管理システム
+WordPress 6
