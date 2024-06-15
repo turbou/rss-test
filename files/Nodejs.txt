@@ -24,6 +24,7 @@ NPMバージョン
 アプリケーションフレームワーク
 Express 4
 Fastify 3、4
+Hapi 19、20、21
 Koa 2.3以降
 Hapi 19、20、21
 
