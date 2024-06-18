@@ -26,7 +26,7 @@ Express 4
 Fastify 3、4
 Hapi 19、20、21
 Koa 2.3以降
-Hapi 19、20、21
+Restify 8、9、10、11
 
 データベースドライバとオブジェクト関係マッピング(ORM)
 MarsDB 現在はメンテナンスされていないが、脆弱なJuiceShopアプリケーションには必要。
