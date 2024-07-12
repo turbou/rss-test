@@ -49,8 +49,7 @@ Ubuntu：18.04以降(x64、ARM64)
 Debian：10以降(x64、ARM64)
 openSUSE：15以降(x64)
 Alpine：3.13以降(x64、ARM64)
-CentOS：7(x64)
-CentOS Stream：8(x64)
+CentOS Stream 8以降(x64)
 Red Hat Enterprise Linux：7以降(x64)
 サポート対象外： Red Hat Enterprise Linux 6
 サーバコンテナ
