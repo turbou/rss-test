@@ -33,26 +33,26 @@ jobs:
           docker pull ghcr.io/contrast-security-oss/contrast-documentation-rss/python3:latest
       - name: Generate RSS by Python
         run: |
-            docker-compose run python3 python java_rlsnote.py
-            docker-compose run python3 python dotnet_framework_rlsnote.py
-            docker-compose run python3 python dotnet_core_rlsnote.py
-            docker-compose run python3 python nodejs_rlsnote.py
-            docker-compose run python3 python nodejs_beta_rlsnote.py
-            docker-compose run python3 python nodejs_protect_rlsnote.py
-            docker-compose run python3 python go_rlsnote.py
-            docker-compose run python3 python python_rlsnote.py
-            docker-compose run python3 python ruby_rlsnote.py
-            docker-compose run python3 python php_rlsnote.py
-            docker-compose run python3 python contrast_rlsnote.py
-            docker-compose run python3 python java_support_tech.py
-            docker-compose run python3 python dotnet_framework_support_tech.py
-            docker-compose run python3 python dotnet_core_support_tech.py
-            docker-compose run python3 python nodejs_support_tech.py
-            docker-compose run python3 python go_support_tech.py
-            docker-compose run python3 python python_support_tech.py
-            docker-compose run python3 python ruby_support_tech.py
-            docker-compose run python3 python php_support_tech.py
-            docker-compose run -e TODAY=${{ github.event.inputs.today }} python3 python agent_end_support_chk.py
+            docker compose run python3 python java_rlsnote.py
+            docker compose run python3 python dotnet_framework_rlsnote.py
+            docker compose run python3 python dotnet_core_rlsnote.py
+            docker compose run python3 python nodejs_rlsnote.py
+            docker compose run python3 python nodejs_beta_rlsnote.py
+            docker compose run python3 python nodejs_protect_rlsnote.py
+            docker compose run python3 python go_rlsnote.py
+            docker compose run python3 python python_rlsnote.py
+            docker compose run python3 python ruby_rlsnote.py
+            docker compose run python3 python php_rlsnote.py
+            docker compose run python3 python contrast_rlsnote.py
+            docker compose run python3 python java_support_tech.py
+            docker compose run python3 python dotnet_framework_support_tech.py
+            docker compose run python3 python dotnet_core_support_tech.py
+            docker compose run python3 python nodejs_support_tech.py
+            docker compose run python3 python go_support_tech.py
+            docker compose run python3 python python_support_tech.py
+            docker compose run python3 python ruby_support_tech.py
+            docker compose run python3 python php_support_tech.py
+            docker compose run -e TODAY=${{ github.event.inputs.today }} python3 python agent_end_support_chk.py
       - name: Commit updated files
         run: |
             git config core.filemode false
