@@ -6,6 +6,7 @@ from datetime import datetime
 import locale
 import html
 import hashlib
+import os
 
 def main():
     locale.setlocale(locale.LC_TIME, "C")
