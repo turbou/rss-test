@@ -25,6 +25,8 @@ def main():
         feed_url='https://contrastsecurity.dev/contrast-documentation-rss/java_rlsnote.xml',
         feed_copyright='Copyright 2023 Contrast Security Japan G.K.'
     )
+    last_idx = len(elems) - 1
+    print(last_idx)
     for idx, elem in enumerate(elems):
         try:
             id_str = elem.get("id")
@@ -35,7 +37,8 @@ def main():
                 print(pubdate_str)
                 pubdate = datetime.strptime(pubdate_str, '%B %d, %Y')
                 print(pubdate)
-            if idx == len(elems) - 1:
+            if idx >= last_idx:
+                print('last!!')
                 env_pubdate = os.getenv('PUBDATE')
                 print(env_pubdate)
                 if env_pubdate:
