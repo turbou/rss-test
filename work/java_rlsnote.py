@@ -32,11 +32,15 @@ def main():
             pubdate_str = elem.get("data-time-modified") # November 6, 2023
             pubdate = None
             if pubdate_str:
+                print(pubdate_str)
                 pubdate = datetime.strptime(pubdate_str, '%B %d, %Y')
+                print(pubdate)
             if idx == len(elems) - 1:
                 env_pubdate = os.getenv('PUBDATE')
+                print(env_pubdate)
                 if env_pubdate:
                     pubdate = datetime.strptime(env_pubdate, '%Y-%m-%d')
+                    print(pubdate)
             title = elem.select('h3.title')[0].text.strip()
             if not title.lower().startswith('java'):
                 continue
