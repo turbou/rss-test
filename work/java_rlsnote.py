@@ -24,7 +24,7 @@ def main():
         feed_url='https://contrastsecurity.dev/contrast-documentation-rss/java_rlsnote.xml',
         feed_copyright='Copyright 2023 Contrast Security Japan G.K.'
     )
-    for elem in elems:
+    for idx, elem in enumerate(elems):
         try:
             id_str = elem.get("id")
             #pubdate_str = elem.get("data-publication-date") # November 6, 2023
@@ -32,6 +32,10 @@ def main():
             pubdate = None
             if pubdate_str:
                 pubdate = datetime.strptime(pubdate_str, '%B %d, %Y')
+            if idx == len(elems) - 1:
+                env_pubdate = os.getenv('PUBDATE')
+                if env_pubdate:
+                    pubdate = datetime.strptime(env_pubdate, '%Y-%m-%d')
             title = elem.select('h3.title')[0].text.strip()
             if not title.lower().startswith('java'):
                 continue
