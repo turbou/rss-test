@@ -5,7 +5,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: contrast-security-oss/contrast-documentation-rss/python3
+  IMAGE_NAME: turbou/contrast-documentation-rss/python3:1.0.2
 
 jobs:
   build-and-push-image:
