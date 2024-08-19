@@ -2,7 +2,7 @@ import urllib.request as req
 from bs4 import BeautifulSoup
 import xml.dom.minidom
 from django.utils.feedgenerator import Rss201rev2Feed
-from datetime import datetime
+import datetime
 import locale
 import html
 import hashlib
@@ -22,7 +22,7 @@ def main():
     )
     rlsnote_count = os.getenv('RLSNOTE_COUNT')
     rlsnote_start = os.getenv('RLSNOTE_START')
-    start_date = datetime.strptime(rlsnote_start, '%Y-%m-%d')
+    start_date = datetime.datetime.strptime(rlsnote_start, '%Y-%m-%d')
     
     for idx in range(int(rlsnote_count)):
         try:
