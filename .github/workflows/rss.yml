@@ -33,7 +33,7 @@ jobs:
           docker pull ghcr.io/turbou/contrast-documentation-rss/python3:1.0.2
       - name: Generate RSS by Python
         run: |
-            docker compose run -e PUBDATE=${{ github.event.inputs.pubdate }} python3 python java_rlsnote.py
+            docker compose run -e PUBDATE=${{ github.event.inputs.pubdate }} python3 python java_rlsnote2.py
       - name: Commit updated files
         run: |
             git config core.filemode false
