@@ -1,14 +1,16 @@
 name: RSS Feed Generator
 
 on:
-  schedule:
-    - cron: "0 0 * * *"
   workflow_dispatch:
     inputs:
-      pubdate:
+      rlsnote_count:
         type: string
         required: false
-        description: 'date(YYYY-MM-DD) for dummy pubdate'
+        description: 'release note count(e.g. 3 5'
+      rlsnote_start:
+        type: string
+        required: false
+        description: 'date(YYYY-MM-DD) for start date'
 
 jobs:
   rssgen:
@@ -33,14 +35,14 @@ jobs:
           docker pull ghcr.io/turbou/contrast-documentation-rss/python3:1.0.2
       - name: Generate RSS by Python
         run: |
-            docker compose run -e PUBDATE=${{ github.event.inputs.pubdate }} python3 python java_rlsnote2.py
+            docker compose run -e RLSNOTE_COUNT=${{ github.event.inputs.rlsnote_count }} -e RLSNOTE_START=${{ github.event.inputs.rlsnote_start }} python3 python rlsnote_test.py
       - name: Commit updated files
         run: |
             git config core.filemode false
             if ! git diff --exit-code --quiet ./files
             then
-              git config user.name Taka Shiozaki
-              git config user.email taka.shiozaki@contrastsecurity.com
+              git config user.name turbou
+              git config user.email turbou@i.softbank.jp
               git commit -m "Commit updated files" ./files/*.txt
               git push
             fi
