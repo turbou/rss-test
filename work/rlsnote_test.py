@@ -24,7 +24,7 @@ def main():
     rlsnote_start = os.getenv('RLSNOTE_START')
     start_date = datetime.datetime.strptime(rlsnote_start, '%Y-%m-%d')
     
-    for idx in range(int(rlsnote_count)):
+    for idx in reversed(range(int(rlsnote_count))):
         try:
             id_str = str(idx).zfill(10)
             pubdate = start_date + datetime.timedelta(days=idx)
