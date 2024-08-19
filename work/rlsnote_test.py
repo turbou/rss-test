@@ -27,8 +27,6 @@ def main():
     for idx in range(int(rlsnote_count)):
         try:
             id_str = str(idx).zfill(10)
-            #pubdate_str = elem.get("data-publication-date") # November 6, 2023
-            pubdate_str = elem.get("data-time-modified") # November 6, 2023
             pubdate = start_date + datetime.timedelta(days=idx)
             title = id_str
             desc_buffer = []
