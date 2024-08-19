@@ -50,6 +50,7 @@ def main():
             guid = 'https://docs.contrastsecurity.jp/ja/java-agent-release-notes-and-archive.html#%s' % id_hash
             if not 'リリース日' in ''.join(desc_buffer):
                 continue
+            print(idx)
             feed.add_item(title=title, link=url, description=''.join(['<p>{0}</p>'.format(s) for s in desc_buffer]), pubdate=pubdate, unique_id=guid)
         except IndexError:
             continue
