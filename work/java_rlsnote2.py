@@ -55,6 +55,7 @@ def main():
             continue
 
     elem = elems[0]
+    error_flg = False
     try:
         id_str = elem.get("id")
         #pubdate_str = elem.get("data-publication-date") # November 6, 2023
@@ -67,7 +68,7 @@ def main():
             pubdate = datetime.strptime(env_pubdate, '%Y-%m-%d')
         title = '%s-Test' % (elem.select('h3.title')[0].text.strip())
         if not title.lower().startswith('java'):
-            continue
+            error_flg = True
         #desc = elem.select('div.panel-body')[0].text
         desc_buffer = []
         #for elem2 in elem.select('p, div'):
@@ -81,8 +82,9 @@ def main():
         url = 'https://docs.contrastsecurity.jp/ja/java-agent-release-notes-and-archive.html#%s' % id_str
         guid = 'https://docs.contrastsecurity.jp/ja/java-agent-release-notes-and-archive.html#%s' % id_hash
         if not 'リリース日' in ''.join(desc_buffer):
-            continue
-        feed.add_item(title=title, link=url, description=''.join(['<p>{0}</p>'.format(s) for s in desc_buffer]), pubdate=pubdate, unique_id=guid)
+            error_flg = True
+        if not error_flg:
+            feed.add_item(title=title, link=url, description=''.join(['<p>{0}</p>'.format(s) for s in desc_buffer]), pubdate=pubdate, unique_id=guid)
     except IndexError:
         print('error')
 
