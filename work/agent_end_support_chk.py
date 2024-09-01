@@ -128,7 +128,7 @@ def main():
     pub_date_str = os.getenv('PUB_DATE')
     if pub_date_str:
         pubdate = dt.strptime(pub_date_str, '%Y-%m-%d').replace(hour=0, minute=0, second=0, microsecond=0)
-        print('using env.PUB_DATE %s' % pub_date)
+        print('using env.PUB_DATE %s' % pubdate)
     for k, v in item_dict.items():
         feed.add_item(title=k, link=v[0], description=''.join(['<p>{0}</p>'.format(s) for s in v[1].splitlines()]), pubdate=pubdate, unique_id=v[2])
     str_val = feed.writeString('utf-8')
