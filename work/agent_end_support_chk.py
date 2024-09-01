@@ -129,9 +129,9 @@ def main():
     if pub_date_str:
         pubdate = dt.strptime(pub_date_str, '%Y-%m-%d').replace(hour=0, minute=0, second=0, microsecond=0)
         print('using env.PUB_DATE %s' % pubdate)
-    sorted_item_dict = sorted(item_dict.keys(), key=lambda x: item_dict[x][3], reverse=True)
-    print(sorted_item_dict)
-    for k, v in sorted_item_dict.items():
+    sorted_keys = sorted(item_dict.keys(), key=lambda x: item_dict[x][3], reverse=True)
+    for k in sorted_keys: # e.g. ['Java 4.12', 'Java 4.12.1']
+        v = item_dict[k]
         feed.add_item(title=k, link=v[0], description=''.join(['<p>{0}</p>'.format(s) for s in v[1].splitlines()]), pubdate=pubdate, unique_id=v[2])
     str_val = feed.writeString('utf-8')
     dom = xml.dom.minidom.parseString(str_val)
