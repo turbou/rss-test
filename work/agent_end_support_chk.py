@@ -130,6 +130,7 @@ def main():
         pubdate = dt.strptime(pub_date_str, '%Y-%m-%d').replace(hour=0, minute=0, second=0, microsecond=0)
         print('using env.PUB_DATE %s' % pubdate)
     sorted_item_dict = sorted(item_dict.keys(), key=lambda x: item_dict[x][3], reverse=True)
+    print(sorted_item_dict)
     for k, v in sorted_item_dict.items():
         feed.add_item(title=k, link=v[0], description=''.join(['<p>{0}</p>'.format(s) for s in v[1].splitlines()]), pubdate=pubdate, unique_id=v[2])
     str_val = feed.writeString('utf-8')
