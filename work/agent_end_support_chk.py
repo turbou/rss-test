@@ -127,7 +127,7 @@ def main():
     pubdate = pubdate
     pub_date_str = os.getenv('PUB_DATE')
     if pub_date_str:
-        pubdate = dt.strptime(pub_date_str, '%Y-%m-%d').replace(second=0, microsecond=0)
+        pubdate = dt.strptime(pub_date_str, '%Y-%m-%d').replace(hour=0, minute=0, second=0, microsecond=0)
         print('using env.PUB_DATE %s' % pubdate)
     sorted_item_dict = sorted(item_dict.keys(), key=lambda x: item_dict[x][3], reverse=True)
     for k, v in sorted_item_dict.items():
