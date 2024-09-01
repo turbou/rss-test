@@ -11,6 +11,10 @@ on:
         type: string
         required: false
         description: 'date(YYYY-MM-DD) for start date'
+      end_of_for_today:
+        type: string
+        required: false
+        description: 'date(YYYY-MM-DD) for end of agent for today date'
 
 jobs:
   rssgen:
@@ -36,6 +40,7 @@ jobs:
       - name: Generate RSS by Python
         run: |
             docker compose run -e RLSNOTE_COUNT=${{ github.event.inputs.rlsnote_count }} -e RLSNOTE_START=${{ github.event.inputs.rlsnote_start }} python3 python rlsnote_test.py
+            docker compose run -e TODAY=${{ github.event.inputs.end_of_for_today }} python3 python agent_end_support_chk.py
       - name: Commit updated files
         run: |
             git config core.filemode false
